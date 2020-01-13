@@ -25,11 +25,18 @@ code {
 	padding: 10px;
 	border: 1px solid #000;
 	border-radius: 5px;
+}
+
+.user + .user:not(.user-active) {
 	margin-top: 1rem;
 }
 
-.user + .user {
-	padding-bottom: 25px;
+.user-active {
+	position: absolute;
+	background-color: rgb(122, 255, 122);
+	top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .pagination {
