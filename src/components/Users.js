@@ -39,7 +39,7 @@ class Users extends React.Component {
 		return (
 			<div className="users">
 				{!usersLimited.length
-					? 'No users'
+					? 'Oops! No users! (run "yarn serve" or "npm run serve" command in terminal and reload page)'
 					: usersLimited.map(user => {
 							return (
 								<div key={user.id} className="user">
