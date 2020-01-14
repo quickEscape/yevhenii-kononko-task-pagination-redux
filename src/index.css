@@ -17,6 +17,30 @@ code {
 	width: 100%;
 	margin: auto;
 }
+
+.header-top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.limit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.limit-btn {
+	cursor: pointer;
+	font-size: 16px;
+	margin-left: 10px;
+	text-align: center;
+	min-width: 40px;
+}
+
+.limit-btn.active {
+	font-weight: 700;
+}
+
 .users {
 	padding: 30px 0;
 }
@@ -35,8 +59,8 @@ code {
 	position: absolute;
 	background-color: rgb(122, 255, 122);
 	top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .pagination {

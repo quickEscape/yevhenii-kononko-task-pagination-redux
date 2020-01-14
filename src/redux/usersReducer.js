@@ -1,4 +1,4 @@
-import { SET_USERS, SET_PAGE, SET_ACTIVE_USER } from './types';
+import { SET_USERS, SET_PAGE, SET_PAGE_LIMIT, SET_ACTIVE_USER } from './types';
 
 const handlers = {
 	[SET_ACTIVE_USER]: state => {
@@ -10,6 +10,9 @@ const handlers = {
 		};
 	},
 	[SET_PAGE]: (state, { page }) => ({ ...state, currentPage: page }),
+	[SET_PAGE_LIMIT]: (state, { limit }) => {
+		return { ...state, pageLimit: limit, currentPage: 1 };
+	},
 	[SET_USERS]: (state, { users }) => ({
 		...state,
 		users,
@@ -34,5 +37,6 @@ const reducer = (state = initialState, action) => {
 export const setUsersAC = users => ({ type: SET_USERS, users });
 export const setPageAC = page => ({ type: SET_PAGE, page });
 export const setActiveUserAC = () => ({ type: SET_ACTIVE_USER });
+export const setPageLimitAC = limit => ({ type: SET_PAGE_LIMIT, limit });
 
 export default reducer;
