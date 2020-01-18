@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setUsersAC, setActiveUserAC } from '../redux/usersReducer';
 
-const usersApi = `${window.location.href}data/users`;
+const usersApi = `${window.location.href}data/users.json`;
 
 const mapStateToProps = state => {
 	return {
@@ -25,7 +25,7 @@ class Users extends React.Component {
 		const { setUsers, setActiveUser } = this.props;
 		fetch(usersApi)
 			.then(response => response.json())
-			.then(users => setUsers(users));
+			.then(({ users }) => setUsers(users));
 
 		setInterval(() => {
 			setActiveUser();
@@ -39,7 +39,7 @@ class Users extends React.Component {
 		return (
 			<div className="users">
 				{!usersLimited.length
-					? 'Oops! No users! (run "yarn serve" or "npm run serve" command in terminal and reload page)'
+					? 'Oops! No users!'
 					: usersLimited.map(user => {
 							return (
 								<div key={user.id} className="user">
