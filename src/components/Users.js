@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setUsersAC, setActiveUserAC } from '../redux/usersReducer';
 
-const usersApi = 'http://localhost:5000/users';
+const usersApi = `${window.location.href}data/users`;
 
 const mapStateToProps = state => {
 	return {
